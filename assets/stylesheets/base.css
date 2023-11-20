@@ -667,15 +667,10 @@ font-size:calc(.8rem + .8vw);
   color: #3498db;
   font-weight: bold;
 }
-
 .like {
-  cursor: pointer;
+  color: black; /* Default color */
 }
 
 .liked {
-  color: red !important; 
-}
-
-.like-count {
-  margin-left: 8px;
+  color: red; /* Color when liked */
 }
