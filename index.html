@@ -9,6 +9,13 @@
     <link rel="icon"
         href="https://a5.behance.net/b6509729f8e3bdb9ed413f033924c9fc76552dcf/img/site/favicon.ico?cb=264615658">
     <link rel="stylesheet" href="assets/stylesheets/base.css">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700&family=Pacifico&display=swap"  rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/e7911acf16.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -119,13 +126,7 @@
                     </svg>
                 </a>
                 <div class="hide-sm">
-                    <a class=" white cell" href="#">
-                        <svg viewBox="5605.991 836 16.958 16.95">
-                            <path data-name="Path 150"
-                                d="M5612.5 836a6.493 6.493 0 0 1 5.29 10.27l4.88 4.88a1.076 1.076 0 0 1-1.52 1.52l-4.88-4.88a6.5 6.5 0 1 1-3.77-11.79zm0 11a4.5 4.5 0 1 0-4.5-4.5 4.5 4.5 0 0 0 4.5 4.5z">
-                            </path>
-                        </svg>
-                    </a>
+                    
                     <a class="cell" href="#">Sign
                         In</a>
 
@@ -167,14 +168,20 @@
 
         <div class="edition">
 
+        
             <select class="edition_popular">
-                <option value="" selected >Sort</option>
+                <option value="" selected>Sort</option>
                 <option value="">Popular</option>
                 <option value="">Following</option>
                 <option value="">New</option>
             </select>
-
+            <div class="search-container">
+                <input type="text" class="search"  oninput="showSuggestions(this.value)">
+                <button class="search-button" onclick="search()">Search</button>
+                <div class="suggestions" id="suggestions-container"></div>
+            </div>
         </div>
+        
 
         <div class="gallery container">
 
@@ -193,15 +200,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                            <h4>120</h4>
+                                            
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -232,14 +233,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -266,14 +262,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -300,14 +291,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -334,15 +320,10 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">
+                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -369,15 +350,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -405,15 +380,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -480,15 +449,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
@@ -523,15 +486,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -568,15 +525,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -613,15 +564,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -659,15 +604,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -705,15 +644,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -751,15 +684,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -797,15 +724,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -843,15 +764,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -889,15 +804,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -935,15 +844,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -981,15 +884,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1027,15 +924,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1073,15 +964,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1119,15 +1004,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1158,14 +1037,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -1192,14 +1066,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -1226,14 +1095,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -1260,14 +1124,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -1294,15 +1153,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -1329,15 +1182,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -1365,15 +1212,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -1440,15 +1281,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
@@ -1483,15 +1318,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1528,15 +1357,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1573,15 +1396,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1619,15 +1436,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1665,15 +1476,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1711,15 +1516,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1757,15 +1556,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1803,15 +1596,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1849,15 +1636,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1895,15 +1676,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1941,15 +1716,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -1987,15 +1756,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2033,15 +1796,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2079,15 +1836,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2119,14 +1870,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -2153,14 +1899,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -2187,14 +1928,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -2221,14 +1957,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -2255,15 +1986,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -2290,15 +2015,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -2326,15 +2045,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -2401,15 +2114,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
@@ -2444,15 +2151,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2489,15 +2190,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2534,15 +2229,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2580,15 +2269,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2626,15 +2309,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2672,15 +2349,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2718,15 +2389,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2764,15 +2429,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2810,15 +2469,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2856,15 +2509,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2902,15 +2549,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2948,15 +2589,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -2994,15 +2629,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3040,15 +2669,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3079,14 +2702,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -3113,14 +2731,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -3147,14 +2760,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -3181,14 +2789,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z"></path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -3215,15 +2818,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -3250,15 +2847,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span> <svg xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -3286,15 +2877,9 @@
                                 </div>
                                 <div class="cell col-2 right">
                                     <div>
-                                        <div class="cell"> <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                        <div class="cell">                                             
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div> <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
                                                     d="M8.5 3.5c-5 0-8 5-8 5s3 5 8 5 8-5 8-5-3-5-8-5zm0 7c-1.105 0-2-.896-2-2 0-1.106.895-2 2-2 1.104 0 2 .894 2 2 0 1.104-.896 2-2 2z">
@@ -3361,15 +2946,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
                                                 <path
@@ -3404,15 +2983,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3449,15 +3022,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3494,15 +3061,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3540,15 +3101,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3586,15 +3141,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3632,15 +3181,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3678,15 +3221,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3724,15 +3261,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3770,15 +3301,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3816,15 +3341,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3862,15 +3381,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3908,15 +3421,9 @@
                                 <div class="cell col-2 right">
                                     <div>
                                         <div class="cell">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -2.5 16 17">
-                                                    <path fill="none" d="M.5.5h16v16H.5z">
-                                                    </path>
-                                                    <path
-                                                        d="M.5 7.5h3v8h-3zM7.207 15.207c.193.19.425.29.677.293H12c.256 0 .512-.098.707-.293l2.5-2.5c.19-.19.288-.457.293-.707V8.5c0-.553-.445-1-1-1h-5L11 5s.5-.792.5-1.5v-1c0-.553-.447-1-1-1l-1 2-4 4v6l1.707 1.707z">
-                                                    </path>
-                                                </svg></span>
-                                            <h4>120</h4>
+                                                                                        
+<i class="fa-solid fa-heart collection-icon like" onclick="toggleLike()"></i>
+<span class="like-count" id="likeCount">120</span>
                                         </div>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 16 16">
@@ -3943,7 +3450,74 @@
         const isExpanded = card.classList.toggle('expanded');
         card.querySelector('.close-btn').style.display = isExpanded ? "block" : "none";
     }
+
+    const suggestionsContainer = document.getElementById('suggestions-container');
+
+    function showSuggestions(keyword) {
+        const suggestions = ['Project Name 1', 'Project Name 2', 'Project Name 10', 'Project Name 11', 'User Name', 'Best of Behance', 'Creative tools', 'Web Design', 'Galleries'];
+
+        suggestionsContainer.innerHTML = '';
+
+        if (keyword.length === 0) {
+            suggestionsContainer.style.display = 'none';
+            return;
+        }
+
+        suggestions.forEach(suggestion => {
+            if (suggestion.toLowerCase().includes(keyword.toLowerCase())) {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.classList.add('suggestion-item');
+
+                const index = suggestion.toLowerCase().indexOf(keyword.toLowerCase());
+                const highlightedSuggestion = suggestion.substring(0, index)
+                    + '<span class="highlight">'
+                    + suggestion.substring(index, index + keyword.length)
+                    + '</span>'
+                    + suggestion.substring(index + keyword.length);
+
+                suggestionItem.innerHTML = highlightedSuggestion;
+
+                suggestionItem.addEventListener('click', () => {
+                    document.querySelector('.search').value = suggestion;
+                    suggestionsContainer.style.display = 'none';
+                });
+                suggestionsContainer.appendChild(suggestionItem);
+            }
+        });
+
+        suggestionsContainer.style.display = 'block';
+    }
+    function search() {
+        const searchTerm = document.querySelector('.search').value;
+        alert('Searching for: ' + searchTerm);
+    }
+    document.addEventListener('click', function (event) {
+        const isClickInside = document.querySelector('.search-container').contains(event.target);
+        if (!isClickInside) {
+            suggestionsContainer.style.display = 'none';
+        }
+    });
+
+
+
+    let isLiked = false;
+
+    function toggleLike() {
+        isLiked = !isLiked;
+        const likeIcon = document.querySelector('.fa-heart');
+        const likeCount = document.getElementById('likeCount');
+
+        if (isLiked) {
+            likeIcon.classList.add('liked');
+            likeCount.textContent = parseInt(likeCount.textContent) + 1;
+        } else {
+            likeIcon.classList.remove('liked');
+            likeCount.textContent = parseInt(likeCount.textContent) - 1;
+        }
+    }
     </script>
+
+
 </body>
 
 </html>
