@@ -29,6 +29,9 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+article:hover{
+  
+}
 body {
   line-height: 1;
 }
@@ -538,4 +541,48 @@ nav.main-nav a:hover {
   font-weight: normal;
   src: local("Acumin Pro Bold"), url("../fonts/Acumin-BdPro.woff") format("woff");
 }
-/*# sourceMappingURL=base.css.map */
+.edition_popular
+{
+
+font-size:calc(.8rem + .8vw);
+
+}
+
+.edition
+{
+    width:90%;
+    background-color:inherit;
+    margin:1rem auto;
+    display:flex;
+    justify-content: space-between;
+}
+
+.edition>*
+{
+    border: 1px solid #c3c2c2;
+    border-radius:.4rem;
+}
+
+.edition_popular
+{
+    font-family:var(--font);
+    font-weight:300;
+    font-size:calc(.1rem + .8vw);
+    padding:calc(.4rem + .2vw) calc(.6rem + .8vw);
+    background-color:#fff;
+    
+
+}
+
+.edition_popular>option>*
+{
+    margin:1rem;
+}
+
+.articlecard {
+  transition: transform 0.3s ease-in-out;
+}
+
+.articlecard.clicked {
+  transform: scale(2);
+}
